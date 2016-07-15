@@ -1,0 +1,37 @@
+{
+  "name": "EZID_UI_library",
+  "version": "1.0.0",
+  "description": "Gulp build tool for EZID UI library",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "",
+    "browsersync-ssi": "",
+    "customizr": "",
+    "del": "",
+    "gulp": "",
+    "gulp-autoprefixer": "",
+    "gulp-cache": "",
+    "gulp-if": "",
+    "gulp-imagemin": "",
+    "gulp-jshint": "",
+    "gulp-lb-include": "",
+    "gulp-minify-css": "",
+    "gulp-modernizr": "",
+    "gulp-postcss": "",
+    "gulp-sass": "",
+    "gulp-scss-lint": "",
+    "gulp-sftp": "",
+    "gulp-sourcemaps": "",
+    "gulp-uglify": "",
+    "gulp-useref": "",
+    "gulp-w3cjs": "",
+    "jshint": "",
+    "run-sequence": ""
+  },
+  "dependencies": {}
+}
