@@ -124,7 +124,7 @@
 // ***** Navigation Elements ***** //
 
 %header__nav-items {
-	display: flex;
+	display: block;
 	padding: 15px 0 15px 45px;
 	border: 1px solid $design-light-gray-border-color;
 	background-color: $design-light-gray-bg-color;
@@ -139,10 +139,8 @@
 	box-sizing: content-box;
 
 	@include bp(screen2) {
-		align-items: flex-end;
-		height: 50px;
 		margin: 0;
-		padding: 0 0 10px;
+		padding: 35px 0 10px;
 		border: none;
 		background-color: transparent;
 		background-position: top center;
@@ -177,20 +175,9 @@
 
 }
 
-// .header__learn {
-// 	@include bp(screen2) {
-// 		position: relative; // for .header__learn-subnav
-
-// 	}
-
-// 	&:hover {
-// 		.header__learn-subnav { // show menu on hover
-// 			display: block;
-// 		}
-
-// 	}
-
-// }
+.header__subnav {
+	// empty
+}
 
 .header__nav-item-learn {
 	@extend %header__nav-items;
@@ -210,7 +197,21 @@
 
 }
 
+.header__subnav-panel {
+
+	@include bp(screen2) {
+		position: absolute;
+		top: 60px;
+		min-width: 150px;
+		border: 1px solid $design-light-gray-border-color;
+		background: $design-white-color;
+		box-shadow: 0 6px 12px;
+	}
+
+}
+
 .header__nav-subitem {
+	display: block;
 	position: relative;
 	padding: 12px 0 12px 45px;
 	border: 1px solid $design-light-gray-border-color;
