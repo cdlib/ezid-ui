@@ -6,12 +6,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Joel",
+  "license": "MIT",
   "devDependencies": {
     "browser-sync": "",
     "browsersync-ssi": "",
-    "customizr": "",
     "del": "",
     "gulp": "",
     "gulp-autoprefixer": "",
@@ -27,10 +26,14 @@
     "gulp-scss-lint": "",
     "gulp-sftp": "",
     "gulp-sourcemaps": "",
+    "gulp-svgmin": "",
+    "gulp-svgstore": "",
     "gulp-uglify": "",
     "gulp-useref": "",
     "gulp-w3cjs": "",
     "jshint": "",
+    "path": "",
+    "postcss-assets": "",
     "run-sequence": ""
   },
   "dependencies": {}

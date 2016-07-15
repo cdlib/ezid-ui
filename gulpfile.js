@@ -22,6 +22,12 @@ var jshint = require('gulp-jshint');
 var lbInclude = require('gulp-lb-include');
 var ssi = require('browsersync-ssi');
 var sftp = require('gulp-sftp');
+var svgstore = require('gulp-svgstore');
+var svgmin = require('gulp-svgmin');
+var path = require('path');
+var postcss = require('gulp-postcss');
+var assets = require('postcss-assets');
+
 
 // Check that gulp is working by running "gulp hello" at the command line:
 gulp.task('hello', function() {
@@ -40,7 +46,7 @@ gulp.task('default', function (callback) {
 // Run the build process by running "gulp build" at the command line:
 gulp.task('build', function (callback) {
   runSequence('clean', 
-    ['scss-lint', 'js-lint', 'sass', 'useref', 'images', 'fonts'],
+    ['fonts', 'scss-lint', 'js-lint', 'sass', 'useref', 'images' ],
     callback
   )
 })
@@ -56,12 +62,15 @@ gulp.task('modernizr', function() {
 });
 
 
-// Process sass and add sourcemaps:
+// Process sass to css, add sourcemaps, inline font & image files into css, and reload browser:
 gulp.task('sass', function() {
   return gulp.src('dev/scss/**/*.scss')
     .pipe(sourcemaps.init())
     .pipe(sass.sync().on('error', sass.logError))
     .pipe(autoprefixer('last 2 versions'))
+    .pipe(postcss([assets({
+      loadPaths: ['fonts/', 'images/']
+    })]))
     .pipe(sourcemaps.write('sourcemaps'))
     .pipe(gulp.dest('dev/css'))
     .pipe(browserSync.reload({
@@ -97,13 +106,9 @@ gulp.task('browserSync', function() {
 
 // Minify and uglify css and js from paths within comment tags in html:
 gulp.task('useref', function(){
-  var assets = useref.assets();
-
   return gulp.src(['dev/**/*.html', '!dev/includes/*'])
-    .pipe(assets)
     .pipe(gulpIf('*.css', minifyCSS())) // Minifies only if it's a CSS file
     .pipe(gulpIf('*.js', uglify())) // Uglifies only if it's a Javascript file
-    .pipe(assets.restore())
     .pipe(useref())
     .pipe(lbInclude()) // Process <!--#include file="" --> statements
     .pipe(gulp.dest('ui_library'))
@@ -163,4 +168,24 @@ gulp.task('deploy', function () {
       authFile: 'gulp-sftp-key.json', // keep this file out of public repos by listing it within .gitignore, .hgignore, etc.
       auth: 'keyMain'
     }));
+});
+
+// Combine SVG files into one and reference them individually within HTML:
+
+gulp.task('svgstore', function () {
+  return gulp
+    .src('app/images/*.svg')
+    .pipe(svgmin(function (file) {
+      var prefix = path.basename(file.relative, path.extname(file.relative));
+      return {
+        plugins: [{
+          cleanupIDs: {
+            prefix: prefix + '-',
+            minify: true
+          }
+        }]
+      }
+    }))
+    .pipe(svgstore())
+    .pipe(gulp.dest('app/images'));
 });
