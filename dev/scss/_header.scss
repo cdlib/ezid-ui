@@ -67,6 +67,8 @@
 
 }
 
+// ***** Show/Hide Navigation ***** //
+
 .header__nav-button {
 	position: absolute; // to .header
 	top: -5px;
@@ -119,7 +121,9 @@
 
 }
 
-%header__nav-element {
+// ***** Navigation Elements ***** //
+
+%header__nav-items {
 	display: flex;
 	padding: 15px 0 15px 45px;
 	border: 1px solid $design-light-gray-border-color;
@@ -143,15 +147,10 @@
 		background-color: transparent;
 		background-position: top center;
 		cursor: pointer;
-
-		&:hover {
-			color: $design-secondary-color;
-		}
-
 	}
 
 	&:last-of-type {
-		margin: -1px 0; // collapse borders on 2nd menu element
+		margin: -1px 0; // collapse borders
 
 		@include bp(screen2) {
 			margin: 0;
@@ -159,10 +158,15 @@
 
 	}
 
+	&:hover {
+		color: $design-black-color;
+		text-decoration: underline;
+	}
+
 }
 
-.header__search-link {
-	@extend %header__nav-element;
+.header__nav-item-search {
+	@extend %header__nav-items;
 	background-image: url('../images/searchOff.svg');
 
 	&:hover,
@@ -172,23 +176,23 @@
 
 }
 
-.header__learn {
-	@include bp(screen2) {
-		position: relative; // for .header__learn-subnav
+// .header__learn {
+// 	@include bp(screen2) {
+// 		position: relative; // for .header__learn-subnav
 
-	}
+// 	}
 
-	&:hover {
-		.header__learn-subnav { // show menu on hover
-			display: block;
-		}
+// 	&:hover {
+// 		.header__learn-subnav { // show menu on hover
+// 			display: block;
+// 		}
 
-	}
+// 	}
 
-}
+// }
 
-.header__learn-link {
-	@extend %header__nav-element;
+.header__nav-item-learn {
+	@extend %header__nav-items;
 	background-image: url('../images/learnOff.svg');
 
 	&:hover,
@@ -196,53 +200,77 @@
 		background-image: url('../images/learnOn.svg');
 	}
 
-	&:focus {
-		+ .header__learn-subnav { // show menu on focus
-			display: block;
-		}
+	// &:focus {
+	// 	+ .header__learn-subnav { // show menu on focus
+	// 		display: block;
+	// 	}
 
-	}
+	// }
 
 }
 
-.header__learn-subnav {
-	display: none; // hide menu until hover on .header__learn
-	position: absolute;
-	top: 60px;
-	left: 0;
-	min-width: 150px;
-	margin: 0;
-	padding: 0;
+.header__nav-subitem {
+	position: relative;
+	padding: 12px 0 12px 45px;
 	border: 1px solid $design-light-gray-border-color;
-	background: $design-white-color;
-	list-style: none;
-	box-shadow: 0 6px 12px;
+	color: $design-primary-color;
+	font-size: 0.9em;
+	font-weight: bold;
+	text-decoration: none;
+	text-transform: uppercase;
 
-	li:nth-of-type(6) a {
-		border-bottom: 1px dotted $design-black-color;
+	&:not(:first-of-type) {
+		margin: -1px 0 0; // collapse borders
 	}
 
-	a {
-		display: block;
-		padding: 0.7em 1em;
-		color: $design-black-color;
-		font-size: 1em;
-		font-weight: normal;
-		text-decoration: none;
-		text-transform: none;
-
-		&:hover {
-			background: linear-gradient(to bottom, $design-secondary-gradient-top, $design-secondary-color);
-			color: $design-white-color;
-			font-weight: bold;
-		}
-
+	&::before {
+		position: absolute;
+		top: 10px;
+		left: 22px;
+		font-size: 1.4em;
+		content: '\2219'; // bullet
 	}
 
 }
 
-.header__contact-link {
-	@extend %header__nav-element;
+// .header__learn-subnav {
+// 	display: none; // hide menu until hover on .header__learn
+// 	position: absolute;
+// 	top: 60px;
+// 	left: 0;
+// 	min-width: 150px;
+// 	margin: 0;
+// 	padding: 0;
+// 	border: 1px solid $design-light-gray-border-color;
+// 	background: $design-white-color;
+// 	list-style: none;
+// 	box-shadow: 0 6px 12px;
+
+// 	li:nth-of-type(6) a {
+// 		border-bottom: 1px dotted $design-black-color;
+// 	}
+
+// 	a {
+// 		display: block;
+// 		padding: 0.7em 1em;
+// 		color: $design-black-color;
+// 		font-size: 1em;
+// 		font-weight: normal;
+// 		text-decoration: none;
+// 		text-transform: none;
+
+// 		&:hover {
+// 			background: linear-gradient(to bottom, $design-secondary-gradient-top, $design-secondary-color);
+// 			color: $design-white-color;
+// 			font-weight: bold;
+// 		}
+
+// 	}
+
+// }
+
+.header__nav-item-contact {
+	@extend %header__nav-items;
 
 	background-image: url('../images/contactOff.svg');
 
