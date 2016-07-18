@@ -18,10 +18,10 @@
     <img src="images/mobile-menu.svg" alt="Show or hide navigation" class="header__nav-button-icon">
   </button>
 
-  <nav role="navigation" id="<!--js-header__nav-->" class="header__nav--selected" aria-hidden="false">
+  <nav role="navigation" id="js-header__nav" class="header__nav--selected" aria-hidden="false">
     <a class="header__nav-item-search" href="">Search</a>
-    <details class="header__subnav">
-      <summary class="header__nav-item-learn" href="">Learn</summary>
+    <details aria-expanded="false">
+      <summary class="header__nav-item-learn" role="button">Learn</summary>
       <div class="header__subnav-panel">
         <a class="header__nav-subitem" href="/learn#01">What Is EZID?</a>
         <a class="header__nav-subitem" href="/learn#02">Current Users</a>
