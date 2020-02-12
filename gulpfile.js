@@ -50,7 +50,7 @@ function scss(cb) {
 function watcher(cb) {
   watch('dev/scss/*.scss', series(scss, refresh, scsslint));
   watch('dev/js/*.js', series(jslint, refresh));
-  watch('dev/*.html', refresh);
+  watch('dev/**/*.html', refresh);
   cb();
 }
 
