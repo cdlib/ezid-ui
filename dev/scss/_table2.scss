@@ -24,6 +24,7 @@
 		text-align: left;
 
 		.sorting:after {
+			content: url('../images/sort.png');
 			position: relative;
 			top: 0;
 			right: 6px;
@@ -32,7 +33,6 @@
 			height: 11px;
 			margin: auto;
 			line-height: 1;
-			content: url('../images/sort.png');
 			// background-image: url('../images/sort.png');
 			// background-position: right center;
 			// background-size: 9px 11px;
@@ -42,8 +42,8 @@
 
 	tbody {
 		display: flex; // removes margin between <tr>s
-		white-space: nowrap;
 		overflow-x: auto;
+		white-space: nowrap;
 
 		tr {
 			display: inline-block;
@@ -62,10 +62,10 @@
 		width: 10em;
 		margin: 0;
 		padding: 0.5em;
+		overflow: hidden;
 		border-right: 1px solid $design-light-gray-border-color;
 		border-bottom: 1px solid $design-light-gray-border-color;
 		text-overflow: ellipsis;
-		overflow: hidden;
 		vertical-align: top;
 	}
 

@@ -66,6 +66,7 @@
 
 	&:before {
 		@include bp(screen1) {
+			content: '';
 			position: absolute;
 			top: 0;
 			right: 0;
@@ -75,7 +76,6 @@
 			background-repeat: no-repeat;
 			background-position: bottom center;
 			background-size: 25px;
-			content: '';
 		}
 
 	}

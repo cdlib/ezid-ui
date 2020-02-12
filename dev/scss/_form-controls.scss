@@ -244,6 +244,7 @@
 
 		// Pseudo button styling:
   	&:before {
+		  content: '';
   		display: inline-block;
 		  width: 1em;
 		  height: 1em;
@@ -252,7 +253,6 @@
 		  border: 0.125em solid $design-dark-gray-color;
 		  border-radius: 1em;
 		  background: $design-white-color;
-		  content: '';
 		  vertical-align: -0.15em;
   	}
 
@@ -278,9 +278,9 @@
 
 .fcontrol__label-required {
 	&:after {
+		content: ' (Required)';
 		color: $design-red-color;
 		font-weight: normal;
-		content: ' (Required)';
 	}
 
 }

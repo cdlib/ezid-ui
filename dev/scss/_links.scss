@@ -10,11 +10,11 @@
 	}
 
 	&[href$='.pdf']:after {
+		content: url('../images/pdf-icon_18x18.png');
 		position: absolute;
 		right: -25px;
 		width: 15px;
 		height: 15px;
-		content: url('../images/pdf-icon_18x18.png');
 	}
 
 }
