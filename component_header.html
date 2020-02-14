@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+	<meta charset="UTF-8">
+	<title>Header Component with Login Modal</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+	<link rel="stylesheet" href="css/main2.min.css">
+
+</head>
+<body>
+
+	<div class="container-fluid">
+
+    <h1><a href="index.html">EZID UI Library</a></h1>
+
+    <h2>Header Component with Login Modal</h2>
+
+    <div class="header__admin-text">Welcome Admin User!</div>
+
+<header role="banner" class="header">
+
+  <div class="header__logos">
+    <a class="header__main-logo-link" href="">
+      <picture>
+        <source srcset="images/logo_small-screen.svg" media="(max-width: 767px)">
+        <img srcset="images/logo.svg" src="data:image/gif;base64,R0lGODlhAQABAAAAADs=" class="header__main-logo-image" alt="University of California, Easy ID, identifiers made easy">
+      </picture>
+    </a>
+    <a class="header__affiliate-logo-link" href="">
+      <img class="header__affiliate-logo-image" src="images/logo_purdue.svg" alt="University of California, Easy ID, identifiers made easy">
+    </a>
+  </div>
+
+  <button type="button" id="js-header__nav-button" class="header__nav-button" aria-controls="js-header__nav">
+    <img src="images/mobile-menu.svg" alt="Show or hide navigation" class="header__nav-button-icon">
+  </button>
+
+  <nav role="navigation" id="js-header__nav" class="header__nav--selected" aria-hidden="false">
+    <a class="header__nav-item-search" href="">Search</a>
+    <details aria-expanded="false">
+      <summary class="header__nav-item-learn" role="button">Learn</summary>
+      <div class="header__subnav-panel">
+        <a class="header__nav-subitem" href="/learn#01">What Is EZID?</a>
+        <a class="header__nav-subitem" href="/learn#02">Current Users</a>
+        <a class="header__nav-subitem" href="/learn#03">Pricing</a>
+        <a class="header__nav-subitem" href="/learn#04">Documentation</a>
+        <a class="header__nav-subitem" href="/learn#05">FAQ</a>
+        <a class="header__nav-subitem" href="/learn#06">Media</a>
+        <a class="header__nav-subitem" href="/doc/apidoc.html">API Guide</a>
+        <a class="header__nav-subitem" href="/demo">EZID Demo</a>
+      </div>
+    </details>
+    <a class="header__nav-item-contact" href="">Contact</a>
+    <div class="header__loginout">
+      <button id="js-header__loginout-button" class="header__loginout-link">Login</button>
+      
+<div id="js-login-modal" class="login-modal" aria-hidden="true" role="dialog" aria-labelledby="login-modal__title">
+	<div class="login-modal__header">
+		<div id="login-modal__title" class="login-modal__title">Access your account</div>
+		<img id="js-login-modal__close" src="images/icon_cross.svg" alt="close" class="login-modal__close">
+	</div>
+	<form id="js-login-modal__form" action="url-here" class="login-modal__form">
+    <div class="login-modal__form-element fcontrol__group-stacked">
+			<label for="login-modal__input1" class="fcontrol__text-label-hidden">Username</label>
+			<input id="login-modal__input1" class="fcontrol__text-field-stacked" type="text" placeholder="Username" required>
+			<span class="fcontrol__invalid-flag">This field is required</span>
+		</div>
+		<div class="login-modal__form-element fcontrol__group-stacked">
+			<label for="login-modal__input2" class="fcontrol__text-label-hidden">Password</label>
+			<input id="login-modal__input2" class="fcontrol__text-field-stacked" type="password" placeholder="Password" required>
+			<span class="fcontrol__invalid-flag">This field is required</span>
+		</div>
+	  <div class="login-modal__footer">
+	    <button type="submit" class="login-modal__submit" id="login" name="login">Log In</button>
+	    <a href="/account/pwreset" class="login-modal__forgot">Forgot your password?</a>
+	  </div>
+	  <span class="login-modal__new">New to EZID? <strong><a href="http://ias-ezid-dev.cdlib.org/contact" class="login-modal__sign-up-link">Contact Us.</a></strong></span>
+	  <input type="hidden" name="redirect_to" value="/">
+	</form>
+</div>
+
+    </div>
+  </nav>
+
+</header>
+
+
+  </div>
+	
+  <script src="js/main2.min.js"></script>
+	
+</body>
+</html>

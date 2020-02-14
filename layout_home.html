@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+	<meta charset="UTF-8">
+	<title>Home Layout</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+	<link rel="stylesheet" href="css/main2.min.css">
+
+</head>
+<body>
+
+	<div class="container-fluid">
+
+    <h1><a href="index.html">EZID UI Library</a></h1>
+
+    <h2>Home Layout With Login Modal</h2>
+
+    <div class="header__admin-text">Welcome Admin User!</div>
+
+<header role="banner" class="header">
+
+  <div class="header__logos">
+    <a class="header__main-logo-link" href="">
+      <picture>
+        <source srcset="images/logo_small-screen.svg" media="(max-width: 767px)">
+        <img srcset="images/logo.svg" src="data:image/gif;base64,R0lGODlhAQABAAAAADs=" class="header__main-logo-image" alt="University of California, Easy ID, identifiers made easy">
+      </picture>
+    </a>
+    <a class="header__affiliate-logo-link" href="">
+      <img class="header__affiliate-logo-image" src="images/logo_purdue.svg" alt="University of California, Easy ID, identifiers made easy">
+    </a>
+  </div>
+
+  <button type="button" id="js-header__nav-button" class="header__nav-button" aria-controls="js-header__nav">
+    <img src="images/mobile-menu.svg" alt="Show or hide navigation" class="header__nav-button-icon">
+  </button>
+
+  <nav role="navigation" id="js-header__nav" class="header__nav--selected" aria-hidden="false">
+    <a class="header__nav-item-search" href="">Search</a>
+    <details aria-expanded="false">
+      <summary class="header__nav-item-learn" role="button">Learn</summary>
+      <div class="header__subnav-panel">
+        <a class="header__nav-subitem" href="/learn#01">What Is EZID?</a>
+        <a class="header__nav-subitem" href="/learn#02">Current Users</a>
+        <a class="header__nav-subitem" href="/learn#03">Pricing</a>
+        <a class="header__nav-subitem" href="/learn#04">Documentation</a>
+        <a class="header__nav-subitem" href="/learn#05">FAQ</a>
+        <a class="header__nav-subitem" href="/learn#06">Media</a>
+        <a class="header__nav-subitem" href="/doc/apidoc.html">API Guide</a>
+        <a class="header__nav-subitem" href="/demo">EZID Demo</a>
+      </div>
+    </details>
+    <a class="header__nav-item-contact" href="">Contact</a>
+    <div class="header__loginout">
+      <button id="js-header__loginout-button" class="header__loginout-link">Login</button>
+      
+<div id="js-login-modal" class="login-modal" aria-hidden="true" role="dialog" aria-labelledby="login-modal__title">
+	<div class="login-modal__header">
+		<div id="login-modal__title" class="login-modal__title">Access your account</div>
+		<img id="js-login-modal__close" src="images/icon_cross.svg" alt="close" class="login-modal__close">
+	</div>
+	<form id="js-login-modal__form" action="url-here" class="login-modal__form">
+    <div class="login-modal__form-element fcontrol__group-stacked">
+			<label for="login-modal__input1" class="fcontrol__text-label-hidden">Username</label>
+			<input id="login-modal__input1" class="fcontrol__text-field-stacked" type="text" placeholder="Username" required>
+			<span class="fcontrol__invalid-flag">This field is required</span>
+		</div>
+		<div class="login-modal__form-element fcontrol__group-stacked">
+			<label for="login-modal__input2" class="fcontrol__text-label-hidden">Password</label>
+			<input id="login-modal__input2" class="fcontrol__text-field-stacked" type="password" placeholder="Password" required>
+			<span class="fcontrol__invalid-flag">This field is required</span>
+		</div>
+	  <div class="login-modal__footer">
+	    <button type="submit" class="login-modal__submit" id="login" name="login">Log In</button>
+	    <a href="/account/pwreset" class="login-modal__forgot">Forgot your password?</a>
+	  </div>
+	  <span class="login-modal__new">New to EZID? <strong><a href="http://ias-ezid-dev.cdlib.org/contact" class="login-modal__sign-up-link">Contact Us.</a></strong></span>
+	  <input type="hidden" name="redirect_to" value="/">
+	</form>
+</div>
+
+    </div>
+  </nav>
+
+</header>
+
+    
+    <!-- Home Banner -->
+    <div class="home-banner" style="background-image: url('images/homeHero_01.jpg')">
+      <div class="home-banner__lead">
+        <p class="home-banner__lead-text">Create and manage long-term globally unique IDs for data and other sources using EZID</p>
+        <a href="" class="home-banner__lead-button">Learn More</a>
+      </div>
+    </div>
+
+    <div class="home__identifier-container">
+
+      <div class="home__identifier-lead-box">
+        <p class="home__identifier-lead-heading">See how easy it is:</p>
+        <p class="home__identifier-lead-note"><b>NOTE:</b> This is just a demo. To create a real identifier, you must have an account.</p>
+      </div>
+
+      <div class="home__identifier-form">
+
+        <div class="fieldset-inline" role="group" aria-labelledby="fieldset__example2">
+
+          <span id="fieldset__example2" class="fieldset-inline__legend-number-1">Choose an identifier type</span>
+          
+          <label for="fcontrol__example-label8" class="fcontrol__radio-label-inline home__radio-labels">
+            <input id="fcontrol__example-label8" class="fcontrol__radio-button-stacked" type="radio" value="" name="name2" checked> <span>ARK</span>
+          </label>
+
+          <label for="fcontrol__example-label9" class="fcontrol__radio-label-inline home__radio-labels">
+            <input id="fcontrol__example-label9" class="fcontrol__radio-button-stacked" type="radio" value="" name="name2"> <span>DOI</span>
+          </label>
+
+        </div>
+
+        <div class="fieldset-stacked fieldset__top-border home__fieldset" role="group" aria-labelledby="fieldset__example1">
+
+          <div id="fieldset__example1" class="fieldset-stacked__legend-number-2">Describe the identified object</div>
+
+          <div class="row">
+          
+            <div class="col-md-5 home__text-field">
+              <div class="fcontrol__group-stacked">
+                <label for="fcontrol__example-label3" class="fcontrol__text-label-hidden">Location (URL)</label>
+                <input id="fcontrol__example-label3" class="fcontrol__text-field-stacked" type="text" placeholder="Location (URL) (required)" required>
+                <span class="fcontrol__invalid-flag">Error message</span>
+              </div>
+            </div>
+
+            <div class="col-md-5 home__text-field">
+              <div class="fcontrol__group-stacked">
+                <label for="fcontrol__example-label3" class="fcontrol__text-label-hidden">Who?</label>
+                <input id="fcontrol__example-label3" class="fcontrol__text-field-stacked" type="text" placeholder="Who? (required)" required>
+                <span class="fcontrol__invalid-flag">Error message</span>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="row">
+
+            <div class="col-md-5 home__text-field">
+              <div class="fcontrol__group-stacked">
+                <label for="fcontrol__example-label3" class="fcontrol__text-label-hidden">What?</label>
+                <input id="fcontrol__example-label3" class="fcontrol__text-field-stacked" type="text" placeholder="What? (required)" required>
+                <span class="fcontrol__invalid-flag">Error message</span>
+              </div>
+            </div>
+
+            <div class="col-md-5 home__text-field">
+              <div class="fcontrol__group-stacked">
+                <label for="fcontrol__example-label3" class="fcontrol__text-label-hidden">When</label>
+                <input id="fcontrol__example-label3" class="fcontrol__text-field-stacked" type="text" placeholder="When? (required)" required>
+                <span class="fcontrol__invalid-flag">Error message</span>
+              </div>
+            </div>
+
+            <div class="col-md-2 home__create-button">
+              <button class="home__button-primary">Create</button>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    
+<footer class="footer">
+
+	<a class="footer__logo-link" href=""><img class="footer__logo" src="images/logoBottom.svg" alt="California Digital Library"></a>
+
+	<div class="footer__news">
+
+		<p class="footer__news-title">Latest News from EZID</p>
+
+		<div class="footer__news-feed">
+			<!-- Begin RSS Feed -->
+			<p>News item 1</p>
+			<p>News item 2</p>
+			<!-- End RSS Feed -->
+		</div>
+
+		<a href="" class="footer__news-link">View all news</a>
+
+	</div>
+
+	<div class="footer__icons">
+		<a class="footer__icon-link" href="" title="Twitter"><img class="footer__icon" src="images/iconTwitter.svg" alt="California Digital Library"></a>
+		<a class="footer__icon-link" href="" title="RSS"><img class="footer__icon" src="images/iconRSS.svg" alt="California Digital Library"></a>
+ 	</div>
+
+	<div class="footer__copyright">
+		<p class="footer__text">EZID is a service of the <a href="http://www.cdlib.org/" class="footer__link">California Digital Library</a>, a division of the <a href="http://www.universityofcalifornia.edu/" class="footer__link">University of California Office of the President</a></p>
+		<p class="footer__text">© 2015 The Regents of the University of California</p>
+		<a href="" class="footer__copyright-link">About Us</a>
+		<a href="" class="footer__copyright-link">Privacy Policy</a>
+	</div>
+
+</footer>
+
+  </div>
+	
+  <script src="js/main2.min.js"></script>
+	
+</body>
+</html>

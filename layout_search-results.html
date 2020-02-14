@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+	<meta charset="UTF-8">
+	<title>Search Results Layout</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+	<link rel="stylesheet" href="css/main2.min.css">
+
+</head>
+<body>
+
+	<div class="container-fluid">
+
+    <h1><a href="index.html">EZID UI Library</a></h1>
+
+    <h2>Search Results Layout</h2>
+
+    <div class="header__admin-text">Welcome Admin User!</div>
+
+<header role="banner" class="header">
+
+  <div class="header__logos">
+    <a class="header__main-logo-link" href="">
+      <picture>
+        <source srcset="images/logo_small-screen.svg" media="(max-width: 767px)">
+        <img srcset="images/logo.svg" src="data:image/gif;base64,R0lGODlhAQABAAAAADs=" class="header__main-logo-image" alt="University of California, Easy ID, identifiers made easy">
+      </picture>
+    </a>
+    <a class="header__affiliate-logo-link" href="">
+      <img class="header__affiliate-logo-image" src="images/logo_purdue.svg" alt="University of California, Easy ID, identifiers made easy">
+    </a>
+  </div>
+
+  <button type="button" id="js-header__nav-button" class="header__nav-button" aria-controls="js-header__nav">
+    <img src="images/mobile-menu.svg" alt="Show or hide navigation" class="header__nav-button-icon">
+  </button>
+
+  <nav role="navigation" id="js-header__nav" class="header__nav--selected" aria-hidden="false">
+    <a class="header__nav-item-search" href="">Search</a>
+    <details aria-expanded="false">
+      <summary class="header__nav-item-learn" role="button">Learn</summary>
+      <div class="header__subnav-panel">
+        <a class="header__nav-subitem" href="/learn#01">What Is EZID?</a>
+        <a class="header__nav-subitem" href="/learn#02">Current Users</a>
+        <a class="header__nav-subitem" href="/learn#03">Pricing</a>
+        <a class="header__nav-subitem" href="/learn#04">Documentation</a>
+        <a class="header__nav-subitem" href="/learn#05">FAQ</a>
+        <a class="header__nav-subitem" href="/learn#06">Media</a>
+        <a class="header__nav-subitem" href="/doc/apidoc.html">API Guide</a>
+        <a class="header__nav-subitem" href="/demo">EZID Demo</a>
+      </div>
+    </details>
+    <a class="header__nav-item-contact" href="">Contact</a>
+    <div class="header__loginout">
+      <button id="js-header__loginout-button" class="header__loginout-link">Login</button>
+      
+<div id="js-login-modal" class="login-modal" aria-hidden="true" role="dialog" aria-labelledby="login-modal__title">
+	<div class="login-modal__header">
+		<div id="login-modal__title" class="login-modal__title">Access your account</div>
+		<img id="js-login-modal__close" src="images/icon_cross.svg" alt="close" class="login-modal__close">
+	</div>
+	<form id="js-login-modal__form" action="url-here" class="login-modal__form">
+    <div class="login-modal__form-element fcontrol__group-stacked">
+			<label for="login-modal__input1" class="fcontrol__text-label-hidden">Username</label>
+			<input id="login-modal__input1" class="fcontrol__text-field-stacked" type="text" placeholder="Username" required>
+			<span class="fcontrol__invalid-flag">This field is required</span>
+		</div>
+		<div class="login-modal__form-element fcontrol__group-stacked">
+			<label for="login-modal__input2" class="fcontrol__text-label-hidden">Password</label>
+			<input id="login-modal__input2" class="fcontrol__text-field-stacked" type="password" placeholder="Password" required>
+			<span class="fcontrol__invalid-flag">This field is required</span>
+		</div>
+	  <div class="login-modal__footer">
+	    <button type="submit" class="login-modal__submit" id="login" name="login">Log In</button>
+	    <a href="/account/pwreset" class="login-modal__forgot">Forgot your password?</a>
+	  </div>
+	  <span class="login-modal__new">New to EZID? <strong><a href="http://ias-ezid-dev.cdlib.org/contact" class="login-modal__sign-up-link">Contact Us.</a></strong></span>
+	  <input type="hidden" name="redirect_to" value="/">
+	</form>
+</div>
+
+    </div>
+  </nav>
+
+</header>
+
+
+    <div class="heading__primary-container">
+      <h1 class="heading__primary-text">Search Results</h1>
+    </div>
+    
+    <div class="search-results__simple">
+      <div class="search-results__simple-query"><strong>Your query:</strong> keywords:test AND publicationYear:1999-2000</div>
+      <div class="search-results__simple-button-group">
+        <button class="search-results__simple-button">Modify original search</button>
+      </div>
+    </div>
+
+    
+<div class="customize-table">
+ <div class="customize-table__heading-wrapper">
+   <h2 class="customize-table__heading">Showing 1 to 10 of 11 Search Results</h2>
+ </div>
+ <button class="customize-table__button-customize">Customize View</button>
+</div>
+
+
+    
+<!-- Note: Make sure to dynamically set the "max" attribute below to the maximum pagination number -->
+
+<div class="pagination">
+	<div class="pagination__select-group">
+    <label for="pagination__select1" class="pagination__select-label">Show</label>
+    <select aria-label="Show number of entries" name="url-here" id="pagination__select1" class="pagination__select">
+      <option value="">50</option>
+      <option value="">100</option>
+    </select>
+    <span class="search-results__select-appended-text">entries</span>
+  </div>
+	<div class="pagination__input-group">
+		<button aria-label="First page of results" class="pagination__first"></button>
+		<button aria-label="Previous page of results" class="pagination__prev">Previous</button>
+		<label for="pagination__input" class="pagination__input1">Page</label>
+		<input type="number" class="pagination__input" id="pagination__input" min="1" max="100"> of #
+		<button aria-label="Next page of results" class="pagination__next">Next</button>
+		<button aria-label="Last page of results" class="pagination__last"></button>
+	</div>
+</div>
+
+
+    
+<table class="table2">
+	<thead>
+		<tr>
+			<th class="sorting" aria-label="Object Title: activate to sort column ascending">Object Title</th>
+			<th class="sorting" aria-label="Object Creator: activate to sort column ascending">Object Creator</th>
+			<th class="sorting" aria-label="Identifier: activate to sort column ascending">Identifier</th>
+			<th class="sorting" aria-label="Object Publisher: activate to sort column ascending">Object Publisher</th>
+			<th class="sorting" aria-label="Object Pub Date: activate to sort column ascending">Object <abbr title="Publication">Pub</abbr> Date</th>
+			<th class="sorting" aria-label="Object Type: activate to sort column ascending">Object Type</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><a href="">2,2,2-trichloro-1-[(4R)-3,3,4-trimethyl-1,1-dioxo-thiazetidin-2-yl]ethanone</a></td>
+			<td>Pitt Quantum Repository</td>
+			<td>doi:10.17614/Q44F1NB79</td>
+			<td>University of Pittsburgh</td>
+			<td>2015</td>
+			<td>Dataset</td>
+		</tr>
+		<tr>
+			<td><a href="">Development and Evaluation of a Thermal/Optical Method for the Analysis of Carbonaceous Aerosol</a></td>
+			<td>Johnson, Richard Lee</td>
+			<td>doi:10.6083/M4TD9V79</td>
+			<td>Oregon Health & Science University</td>
+			<td>&nbsp;</td>
+			<td>Text</td>
+		</tr>
+		<tr>
+			<td><a href="">Supreme Court Opinion Writing Database</a></td>
+			<td>James Spriggs, Paul Wahlbeck, and Forrest Maltzman</td>
+			<td>doi:10.7936/K7MW2F2T</td>
+			<td>Washington University in St. Louis</td>
+			<td>&nbsp;</td>
+			<td>Dataset</td>
+		</tr>
+		<tr>
+			<td><a href="">Replication data for: Human Capital and the Supply of Religion</a></td>
+			<td>Fisman, Raymond (Boston University); Engelberg, Joseph; Hartzell, Jay C.; Parsons, Christopher A.</td>
+			<td>doi:10.7910/DVN/MVF3YU</td>
+			<td>Harvard Dataverse</td>
+			<td>2015</td>
+			<td>Dataset</td>
+		</tr>
+		<tr>
+			<td><a href="">Report on area subject to coal prospecting and mining licence applications, Giles Creek, near Reefton</a></td>
+			<td>Walls, G. Y.</td>
+			<td>doi:10.7931/DL1-VR-416</td>
+			<td>Botany Division, Department of Scientific and Industrial Research</td>
+			<td>1/25/1983</td>
+			<td>Text</td>
+		</tr>
+		<tr>
+			<td><a href="">Plant Names Database Quarterly Changes February 2015</a></td>
+			<td>Allan Herbarium</td>
+			<td>doi:10.7931/P1VC7N</td>
+			<td>Manaaki Whenua Press</td>
+			<td>2015</td>
+			<td>[No value]</td>
+		</tr>
+		<tr>
+			<td><a href="">TREND: Data-Planet. Usage Statistics: Sessions | Product: Data Planet | Organization: UniversityOfNorthTexas, 08/2014 - 01/2016. Data-Planet™ Statistical Datasets by Conquest Systems, Inc. Dataset-ID: 077-001-001Data-Planet. Usage Statistics: Searches | Product: Data Planet | Organization: UniversityOfNorthTexas, 08/2014 - 01/2016. Data-Planet™ Statistical Datasets by Conquest Systems, Inc. Dataset-ID: 077-001-002Data-Planet. Usage Statistics: Retrievals | Product: Data Planet | Organization: UniversityOfNorthTexas | FileName: Retrievals, 08/2014 - 01/2016. Data-Planet™ Statistical Datasets by Conquest Systems, Inc. Dataset-ID: 077-001-003</a></td>
+			<td>Data-Planet</td>
+			<td>doi:10.6068/DP1526087FF117</td>
+			<td>Data-Planet™ Statistical Datasets by Conquest Systems, Inc.</td>
+			<td>2016</td>
+			<td>Other/DataSheet</td>
+		</tr>
+		<tr>
+			<td><a href="">Changes in brain anatomy during the course of PTSD</a></td>
+			<td>Cardenas, Valerie;Samuelson, Kristin;Lenoci, Maryanne A.;Studholme, Colin;Neylan, Thomas C.;Marmar, Charles R.;Schuff, Norbert;Weiner, Michael W.</td>
+			<td>doi:10.7272/Q6RN35SZ</td>
+			<td>University of California, San Francisco</td>
+			<td>2012</td>
+			<td>Dataset/application/octet-stream</td>
+		</tr>
+		<tr>
+			<td><a href="">CCRI 1931 Census of Canada: Aggregate data and geography = CCRI 1931 Recensement du Canada: Données agrégées et cadre géographique</a></td>
+			<td>Gaffield, Chad, Baskerville, Peter, St-Hilaire, Marc, Amrhein, Carl, Cadigan, Sean, Moldofsky, Byron, Darroch, Gordon, Bellavance, Claude, Normand, France</td>
+			<td>doi:10.7939/DVN/10452</td>
+			<td>Canadian Century Research Infrastructure</td>
+			<td>2015</td>
+			<td>Text</td>
+		</tr>
+		<tr>
+			<td><a href="">Federal Employee Average Salary from the United States Federal Government Employees: GS-Level Analysis dataset</a></td>
+			<td>Conquest System Datasheet</td>
+			<td>doi:10.6068/DP149A165010A24</td>
+			<td>Conquest Systems, Inc.</td>
+			<td>2014</td>
+			<td>[No value]</td>
+		</tr>
+	</tbody>
+</table>
+
+
+    
+<!-- Note: Make sure to dynamically set the "max" attribute below to the maximum pagination number -->
+
+<div class="pagination">
+	<div class="pagination__select-group">
+    <label for="pagination__select1" class="pagination__select-label">Show</label>
+    <select aria-label="Show number of entries" name="url-here" id="pagination__select1" class="pagination__select">
+      <option value="">50</option>
+      <option value="">100</option>
+    </select>
+    <span class="search-results__select-appended-text">entries</span>
+  </div>
+	<div class="pagination__input-group">
+		<button aria-label="First page of results" class="pagination__first"></button>
+		<button aria-label="Previous page of results" class="pagination__prev">Previous</button>
+		<label for="pagination__input" class="pagination__input1">Page</label>
+		<input type="number" class="pagination__input" id="pagination__input" min="1" max="100"> of #
+		<button aria-label="Next page of results" class="pagination__next">Next</button>
+		<button aria-label="Last page of results" class="pagination__last"></button>
+	</div>
+</div>
+
+
+    
+<footer class="footer">
+
+	<a class="footer__logo-link" href=""><img class="footer__logo" src="images/logoBottom.svg" alt="California Digital Library"></a>
+
+	<div class="footer__news">
+
+		<p class="footer__news-title">Latest News from EZID</p>
+
+		<div class="footer__news-feed">
+			<!-- Begin RSS Feed -->
+			<p>News item 1</p>
+			<p>News item 2</p>
+			<!-- End RSS Feed -->
+		</div>
+
+		<a href="" class="footer__news-link">View all news</a>
+
+	</div>
+
+	<div class="footer__icons">
+		<a class="footer__icon-link" href="" title="Twitter"><img class="footer__icon" src="images/iconTwitter.svg" alt="California Digital Library"></a>
+		<a class="footer__icon-link" href="" title="RSS"><img class="footer__icon" src="images/iconRSS.svg" alt="California Digital Library"></a>
+ 	</div>
+
+	<div class="footer__copyright">
+		<p class="footer__text">EZID is a service of the <a href="http://www.cdlib.org/" class="footer__link">California Digital Library</a>, a division of the <a href="http://www.universityofcalifornia.edu/" class="footer__link">University of California Office of the President</a></p>
+		<p class="footer__text">© 2015 The Regents of the University of California</p>
+		<a href="" class="footer__copyright-link">About Us</a>
+		<a href="" class="footer__copyright-link">Privacy Policy</a>
+	</div>
+
+</footer>
+
+  </div>
+	
+  <script src="js/main2.min.js"></script>
+	
+</body>
+</html>
