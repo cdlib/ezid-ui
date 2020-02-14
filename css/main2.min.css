@@ -2266,7 +2266,7 @@ Selector pattern using above mixin:
 }
 
 */
-.button__text, .fieldset-hidden__legend, .fcontrol__text-label-hidden, .fcontrol__select-label-hidden, .fcontrol__radio-button-stacked {
+.button__text, .fieldset-hidden__legend, .fcontrol__text-label-hidden, .fcontrol__select-label-hidden, .fcontrol__radio-button-stacked, .identifier-control label {
   position: absolute;
   left: -9999px; }
 
@@ -2661,6 +2661,7 @@ Selector pattern using above mixin:
 .fcontrol__radio-button-stacked + span {
   display: block; }
   .fcontrol__radio-button-stacked + span:before {
+    content: '';
     display: inline-block;
     width: 1em;
     height: 1em;
@@ -2670,7 +2671,6 @@ Selector pattern using above mixin:
     border: 0.125em solid #7c7e7f;
     border-radius: 1em;
     background: white;
-    content: '';
     vertical-align: -0.15em; }
 
 .fcontrol__radio-button-stacked:checked + span:before {
@@ -2683,9 +2683,9 @@ Selector pattern using above mixin:
   font-size: 1em; }
 
 .fcontrol__label-required:after {
+  content: ' (Required)';
   color: #9e1919;
-  font-weight: normal;
-  content: ' (Required)'; }
+  font-weight: normal; }
 
 .fcontrol__invalid-flag {
   display: none;
@@ -2832,11 +2832,11 @@ Selector pattern using above mixin:
   .link__primary:hover, .footer__news-link:hover, .login-modal__forgot:hover, .link__over-beige:hover, .footer__link:hover, .footer__copyright-link:hover, .link__pop:hover, .login-modal__sign-up-link:hover {
     text-decoration: none; }
   .link__primary[href$='.pdf']:after, .footer__news-link[href$='.pdf']:after, .login-modal__forgot[href$='.pdf']:after, .link__over-beige[href$='.pdf']:after, .footer__link[href$='.pdf']:after, .footer__copyright-link[href$='.pdf']:after, .link__pop[href$='.pdf']:after, .login-modal__sign-up-link[href$='.pdf']:after {
+    content: url("../images/pdf-icon_18x18.png");
     position: absolute;
     right: -25px;
     width: 15px;
-    height: 15px;
-    content: url("../images/pdf-icon_18x18.png"); }
+    height: 15px; }
 
 .link__primary, .footer__news-link, .login-modal__forgot {
   border-bottom: 1px solid #beb6af;
@@ -3171,6 +3171,8 @@ Selector pattern using above mixin:
 
 .header__nav-item-search, .header__nav-item-learn, .header__nav-item-contact {
   display: block;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
   padding: 15px 0 15px 45px;
   border: 1px solid #beb6af;
   border-top: none;
@@ -3182,9 +3184,7 @@ Selector pattern using above mixin:
   font-size: 0.9em;
   font-weight: bold;
   text-decoration: none;
-  text-transform: uppercase;
-  -webkit-box-sizing: content-box;
-          box-sizing: content-box; }
+  text-transform: uppercase; }
   @media (min-width: 768px) {
     .header__nav-item-search, .header__nav-item-learn, .header__nav-item-contact {
       margin: 0;
@@ -3250,11 +3250,11 @@ Selector pattern using above mixin:
         font-weight: bold;
         text-decoration: none; } }
   .header__nav-subitem::before {
+    content: '\2219';
     position: absolute;
     top: 10px;
     left: 22px;
-    font-size: 1.4em;
-    content: '\2219'; }
+    font-size: 1.4em; }
 
 .header__nav-item-contact {
   background-image: url("../images/contactOff.svg"); }
@@ -3285,12 +3285,12 @@ Selector pattern using above mixin:
       background-size: cover; } }
 
 .home-banner__lead {
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
   width: 71vw;
   margin: 0 auto;
   padding: 3vw 0 0;
-  text-align: center;
-  -webkit-box-sizing: content-box;
-          box-sizing: content-box; }
+  text-align: center; }
   @media (min-width: 480px) {
     .home-banner__lead {
       width: 430px;
@@ -3326,6 +3326,71 @@ Selector pattern using above mixin:
       font-size: 0.9em; } }
   .home-banner__lead-button:hover, .home-banner__lead-button:focus {
     text-decoration: underline; }
+
+.identifier-controls {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  max-width: 1000px;
+  margin: 0 auto; }
+
+.identifier-control {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  margin-top: 20px;
+  margin-bottom: 20px; }
+  .identifier-control:not(:last-child) {
+    padding-right: 20px; }
+  @supports ((-webkit-appearance: none) or (-moz-appearance: none) or (appearance: none)) {
+    .identifier-control button {
+      border: none;
+      border-radius: 3px;
+      background-color: #00778a;
+      color: white;
+      font-size: 1.1em;
+      -webkit-appearance: none;
+         -moz-appearance: none;
+              appearance: none;
+      padding: .5rem 1rem; } }
+
+.identifier-control select {
+  margin-bottom: 10px; }
+  @supports ((-webkit-appearance: none) or (-moz-appearance: none) or (appearance: none)) {
+    .identifier-control select {
+      border: none;
+      border-radius: 3px;
+      background-color: #00778a;
+      color: white;
+      font-size: 1.1em;
+      -webkit-appearance: none;
+         -moz-appearance: none;
+              appearance: none;
+      min-width: 20rem;
+      padding: 1rem 4.8rem;
+      background-image: none, url("../images/icon_caret-down-solid.svg");
+      background-repeat: no-repeat;
+      background-position: left 1.7rem center, right 1.7rem center;
+      background-size: 1.8rem, 1.5rem; }
+      .identifier-control select.view {
+        background-image: url("../images/icon_share-all-solid.svg"), url("../images/icon_caret-down-solid.svg"); }
+      .identifier-control select.cite {
+        background-image: url("../images/icon_quote-right-solid.svg"), url("../images/icon_caret-down-solid.svg"); }
+      .identifier-control select.share {
+        background-image: url("../images/icon_external-link-solid.svg"), url("../images/icon_caret-down-solid.svg"); } }
+
+.identifier-content {
+  max-width: 1000px;
+  margin: 0 auto; }
 
 .login-menu__container {
   margin: 0 -10px;
@@ -3387,6 +3452,7 @@ Selector pattern using above mixin:
   color: white; }
   @media (min-width: 480px) {
     .login-menu__link--selected:before {
+      content: '';
       position: absolute;
       top: 0;
       right: 0;
@@ -3395,8 +3461,7 @@ Selector pattern using above mixin:
       background-image: url("../images/icon_triangle.svg");
       background-repeat: no-repeat;
       background-position: bottom center;
-      background-size: 25px;
-      content: ''; } }
+      background-size: 25px; } }
 
 .login-modal {
   display: none;
@@ -3551,14 +3616,14 @@ Selector pattern using above mixin:
   font-weight: bold;
   text-transform: uppercase; }
   .showhide__summary:before {
+    content: '';
     border: 1px solid #beb6af;
     border-radius: 3px;
     background: -webkit-gradient(linear, left top, left bottom, from(whitesmoke), to(#e3e4e4));
-    background: linear-gradient(to bottom, whitesmoke, #e3e4e4);
-    content: ''; }
+    background: linear-gradient(to bottom, whitesmoke, #e3e4e4); }
   .showhide__summary:after {
-    background: url("../images/icon_down-arrow2.svg") center/12px no-repeat;
-    content: ''; }
+    content: '';
+    background: url("../images/icon_down-arrow2.svg") center/12px no-repeat; }
 
 .sidebox {
   padding: 15px 15px 0;
@@ -3593,6 +3658,7 @@ Selector pattern using above mixin:
       display: block; }
 
 .tab__label {
+  z-index: 1;
   margin: 0 10px 0 0;
   padding: 0.5em 10px;
   border: 1px solid #beb6af;
@@ -3600,8 +3666,7 @@ Selector pattern using above mixin:
   color: #00778a;
   font-size: 1.2em;
   font-weight: normal;
-  cursor: pointer;
-  z-index: 1; }
+  cursor: pointer; }
   @media (min-width: 768px) {
     .tab__label {
       padding: 0.5em 30px; } }
@@ -3657,12 +3722,12 @@ Selector pattern using above mixin:
           background: transparent;
           font-weight: normal; } }
     .table1 td:not(:first-child):before {
+      content: attr(data-th) ": ";
       -webkit-box-flex: 0;
           -ms-flex: 0 0 auto;
               flex: 0 0 auto;
       width: 10em;
-      font-weight: bold;
-      content: attr(data-th) ": "; }
+      font-weight: bold; }
       @media (min-width: 480px) {
         .table1 td:not(:first-child):before {
           display: none; } }
@@ -3684,6 +3749,7 @@ Selector pattern using above mixin:
     background: #ece5d6;
     text-align: left; }
     .table2 th .sorting:after {
+      content: url("../images/sort.png");
       position: relative;
       top: 0;
       right: 6px;
@@ -3691,14 +3757,13 @@ Selector pattern using above mixin:
       left: auto;
       height: 11px;
       margin: auto;
-      line-height: 1;
-      content: url("../images/sort.png"); }
+      line-height: 1; }
   .table2 tbody {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    white-space: nowrap;
-    overflow-x: auto; }
+    overflow-x: auto;
+    white-space: nowrap; }
     .table2 tbody tr {
       display: inline-block;
       -webkit-box-flex: 1;
@@ -3712,10 +3777,10 @@ Selector pattern using above mixin:
     width: 10em;
     margin: 0;
     padding: 0.5em;
+    overflow: hidden;
     border-right: 1px solid #beb6af;
     border-bottom: 1px solid #beb6af;
     text-overflow: ellipsis;
-    overflow: hidden;
     vertical-align: top; }
 
 @media (min-width: 768px) {
@@ -3759,9 +3824,9 @@ Selector pattern using above mixin:
     text-align: left;
     cursor: pointer; }
     .table3 th::before {
+      content: url("../images/sort.png");
       position: absolute;
-      right: 10px;
-      content: url("../images/sort.png"); } }
+      right: 10px; } }
 
 @media (max-width: 768px) {
   .table3 table,
@@ -3794,9 +3859,9 @@ Selector pattern using above mixin:
       white-space: nowrap; }
     .table3 td:nth-of-type(3) {
       max-width: 50vw;
+      overflow: hidden;
       text-overflow: ellipsis;
-      white-space: nowrap;
-      overflow: hidden; }
+      white-space: nowrap; }
   .table3 td:nth-of-type(1):before {
     content: 'Object Title'; }
   .table3 td:nth-of-type(2):before {
@@ -4129,7 +4194,7 @@ Selector pattern using above mixin:
 
 body {
   margin: 0 10px;
-  font-family: 'KievitWeb'; }
+  font-family: 'KievitWeb', Arial, sans-serif; }
 
 abbr {
   border: none;
