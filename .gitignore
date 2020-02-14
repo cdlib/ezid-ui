@@ -6,3 +6,4 @@ dist
 *.css.map
 gulp-sftp-key.json
 ui_library
+.publish

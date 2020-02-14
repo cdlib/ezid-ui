@@ -20,12 +20,15 @@ var lbInclude = require('gulp-lb-include');
 var ssi = require('browsersync-ssi');
 var postcss = require('gulp-postcss');
 var assets = require('postcss-assets');
+var ghPages = require('gulp-gh-pages');
 
 // Public Tasks:
 
 exports.default = parallel(scss, start, watcher);
 
 exports.build = series(clean, fonts, scsslint, jslint, scss, assemble, copyimages);
+
+exports.upload = githubpages;
 
 exports.modernizr = runmodernizr;
 
@@ -131,6 +134,14 @@ function jslint(cb) {
   return src(['dev/js/**/*.js', '!dev/js/vendor/*.js'])
   .pipe(jshint())
   .pipe(jshint.reporter('default'))
+  cb();
+}
+
+// Upload ui_library build to GitHub Pages:
+
+function githubpages(cb) {
+  return src('./ui_library/**/*')
+  .pipe(ghPages())
   cb();
 }
 
